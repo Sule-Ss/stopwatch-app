@@ -1,15 +1,16 @@
-dk = document.getElementById("minute");
-sn = document.getElementById("second");
-ms = document.getElementById("millisecond");
-start = document.getElementById("start");
-pause = document.getElementById("pause");
-reset = document.getElementById("reset");
+const sn = document.getElementById("second");
+const dk = document.getElementById("minute");
+const ms = document.getElementById("millisecond");
+const start = document.getElementById("start");
+const pause = document.getElementById("pause");
+const reset = document.getElementById("reset");
 
 start.addEventListener("click", () => {
   start.disabled = true;
-  let saniyeTime = setInterval(saniye, 1000);
   let dakikaTime = setInterval(dakika, 60000);
+  let saniyeTime = setInterval(saniye, 1000);
   let saliseTime = setInterval(salise, 10);
+
   pause.addEventListener("click", () => {
     start.disabled = false;
     clearInterval(saliseTime);
@@ -29,7 +30,6 @@ start.addEventListener("click", () => {
     clearInterval(saniyeTime);
     clearInterval(dakikaTime);
   });
-  return;
 });
 
 let count1 = 0;
